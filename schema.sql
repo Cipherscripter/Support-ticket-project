@@ -1,11 +1,3 @@
--- ============================================================================
--- SQL FILE: schema.sql
--- PROJECT: Support Ticket Analysis System using MySQL
--- AUTHOR: Fresher Support / Operations Analyst (2026 Graduate)
--- DESCRIPTION: Sets up the database and defines the schema, constraints,
---              foreign keys, and indexes for a realistic customer support
---              operations ticketing system.
--- ============================================================================
 
 -- 1. DATABASE CREATION AND INITIALIZATION
 -- Create the database if it doesn't already exist to prevent execution errors
@@ -108,6 +100,3 @@ CREATE TABLE ticket_updates (
     INDEX idx_updates_ticket_id (ticket_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ============================================================================
--- END OF schema.sql
--- ============================================================================

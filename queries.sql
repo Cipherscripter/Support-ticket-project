@@ -1,16 +1,8 @@
--- ============================================================================
--- SQL FILE: queries.sql
--- PROJECT: Support Ticket Analysis System using MySQL
--- AUTHOR: Fresher Support / Operations Analyst (2026 Graduate)
--- DESCRIPTION: Contains structured, commented SQL queries demonstrating SQL 
---              proficiency and an operational support analyst mindset.
--- ============================================================================
-
 USE support_ticket_db;
 
--- ============================================================================
+
 -- PART 1: BEGINNER & INTERMEDIATE OPERATIONS (FUNDAMENTALS)
--- ============================================================================
+
 
 -- Query 1.1: Retrieve all active agents sorted by their technical tier.
 -- Operational Rationale: Helps team leads understand active staffing capacity and distribution across tiers.
@@ -66,7 +58,6 @@ FROM tickets
 GROUP BY status
 ORDER BY ticket_count DESC;
 
-
 -- Query 1.5: Join tickets with customer names.
 -- Operational Rationale: Displays customer details on front-end grids so agents know who submitted each ticket.
 -- SQL Concepts: INNER JOIN, table aliases, column concatenation (CONCAT)
@@ -114,9 +105,8 @@ ORDER BY satisfaction_score DESC;
 
 
 
--- ============================================================================
+
 -- PART 2: REAL-WORLD SUPPORT OPERATIONS ANALYTICS (KPI REPORTING)
--- ============================================================================
 
 -- Query 2.1: Most Common Issue Types (Category Distribution)
 -- Operational Rationale: Identifies the biggest drivers of customer friction. A high volume of billing queries may signal pricing confusion, while technical spikes point to system bugs.
@@ -248,7 +238,3 @@ INNER JOIN agents a ON t.agent_id = a.agent_id
 WHERE a.status = 'On Leave'
   AND t.status NOT IN ('Resolved', 'Closed')
 ORDER BY t.priority DESC, days_stuck DESC;
-
--- ============================================================================
--- END OF queries.sql
--- ============================================================================
